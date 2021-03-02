@@ -13,7 +13,12 @@ make install
 Usage
 ------------
 
-To use the generator, run (in CleanSwift scene folder):
+To use the generator,
+
+[=== COMMIT YOUR CODE ===]
+[=== USE AT YOUR OWN RISK ===]
+
+run (in CleanSwift scene folder):
 ```
 zutil
 ```
