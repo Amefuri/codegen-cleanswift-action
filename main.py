@@ -82,16 +82,17 @@ def getMarkerName(componentType: ComponentType):
     else:
         return ''
 
-def getFunctionName(componentType: ComponentType, sceneName: str, actionName: str, ):
+def getFunctionName(componentType: ComponentType, sceneName: str, actionName: str):
     if componentType == ComponentType.INTERACTOR:
-        return f'func {lowerFirst(actionName)}(request: {sceneName}.{actionName}.Request)'
+        return f'func {lowerFirst(actionName)}(request: {sceneName}.{upperFirst(actionName)}.Request)'
     elif componentType == ComponentType.PRESENTER:
-        return f'func present{upperFirst(actionName)}(response: {sceneName}.{actionName}.Response)'
+        return f'func present{upperFirst(actionName)}(response: {sceneName}.{upperFirst(actionName)}.Response)'
     elif componentType == ComponentType.VIEWCONTROLLER:
-        return f'func display{upperFirst(actionName)}(viewModel: {sceneName}.{actionName}.ViewModel)'
+        return f'func display{upperFirst(actionName)}(viewModel: {sceneName}.{upperFirst(actionName)}.ViewModel)'
     else:
         return ''
 
+print('Binary version: 1.0.1')
 indentSize = int(input("Enter indent(2 or 4): "))
 sceneName = input("Enter sceneName(ex. ChatRoomList): ")
 actionName = input("Enter actionName(ex. FetchList): ")
